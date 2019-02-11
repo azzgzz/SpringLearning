@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+       default-init-method="initObject"
+       default-destroy-method="destroyObject"
+       default-lazy-init="true">
+
+    <import resource="sony_context.xml"/>
+    <import resource="toshiba_context.xml"/>
+    <import resource="db_context.xml"/>
+
+    <bean id="t1000" class="ru.azz.robot.ModelT1000"
+          p:hand-ref="toshibaHand"
+          p:leg-ref="sonyLeg"
+          p:head-ref="toshibaHead"
+          depends-on="dataBaseBeanamana">
+        <constructor-arg value="silver" index="0" type="String"/>
+        <constructor-arg value="2006" index="1" type="int"/>
+        <constructor-arg value="true" index="2" type="boolean"/>
+        <!--<property name="hand" ref="toshibaHand"/>-->
+        <!--<property name="head" ref="toshibaHead"/>-->
+        <!--<property name="leg" ref="toshibaLeg"/>-->
+    </bean>
+
+    <bean id="t1001" class="ru.azz.robot.ModelT1000" scope="prototype"
+          p:head-ref="sonyHead"
+          p:hand-ref="sonyHand"
+          p:leg-ref="toshibaLeg"
+          depends-on="t1000">
+        <property name="color" value="bronze"/>
+        <property name="year" value="2020"/>
+        <property name="soundEnable" value="false"/>
+    </bean>
+
+</beans>
