@@ -11,9 +11,5 @@
     <context:annotation-config/>
     <context:component-scan base-package="ru.azz"/>
 
-    <import resource="toshiba_context.xml"/>
-    <import resource="sony_context.xml"/>
-
-    <bean id="t1000" class="ru.azz.robot.ModelT1000" scope="prototype"/>
 
 </beans>

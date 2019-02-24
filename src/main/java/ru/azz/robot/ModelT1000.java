@@ -2,20 +2,24 @@ package ru.azz.robot;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.support.MethodReplacer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import ru.azz.robotinterfaces.Hand;
 import ru.azz.robotinterfaces.Head;
 import ru.azz.robotinterfaces.Leg;
-import ru.azz.robotinterfaces.Robot;
 
 import java.lang.reflect.Method;
 
+@Component
 public class ModelT1000 extends BaseModel implements InitializingBean, DisposableBean, MethodReplacer {
 
     private String color;
     private int year;
     private boolean soundEnable;
-
 
     public ModelT1000(){
         super();
@@ -38,6 +42,20 @@ public class ModelT1000 extends BaseModel implements InitializingBean, Disposabl
         this.color = color;
         this.year = year;
         this.soundEnable = soundEnable;
+    }
+
+
+
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public ModelT1000 model1() {
+        return new ModelT1000();
+    }
+
+    @Bean
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public ModelT1000 model2() {
+        return new ModelT1000("Black", 2005, true);
     }
 
     @Override
