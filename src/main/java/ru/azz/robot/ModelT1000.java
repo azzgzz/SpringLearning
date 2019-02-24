@@ -1,37 +1,37 @@
 package ru.azz.robot;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.support.MethodReplacer;
 import ru.azz.robotinterfaces.Hand;
 import ru.azz.robotinterfaces.Head;
 import ru.azz.robotinterfaces.Leg;
 import ru.azz.robotinterfaces.Robot;
 
-public class ModelT1000 implements Robot {
+import java.lang.reflect.Method;
 
-    private Hand hand;
-    private Head head;
-    private Leg leg;
+public class ModelT1000 extends BaseModel implements InitializingBean, DisposableBean, MethodReplacer {
 
     private String color;
     private int year;
     private boolean soundEnable;
 
 
-    public ModelT1000(){}
-
-    public ModelT1000(Hand hand, Head head, Leg leg){
+    public ModelT1000(){
         super();
-        this.hand = hand;
-        this.head = head;
-        this.leg = leg;
+        System.out.println(this + " - ModelT1000 empty constructor");}
+
+    public ModelT1000(Hand hand, Leg leg, Head head){
+        super(hand, leg, head);
+        System.out.println(this + " - ModelT1000 3 args constructor");
     }
 
-    public ModelT1000(Hand hand, Head head, Leg leg, String color, int year, boolean soundEnable) {
-        this.hand = hand;
-        this.head = head;
-        this.leg = leg;
+    public ModelT1000(Hand hand, Leg leg, Head head, String color, int year, boolean soundEnable) {
+        super(hand, leg, head);
         this.color = color;
         this.year = year;
         this.soundEnable = soundEnable;
+        System.out.println(this + " - ModelT1000 6 args constructor");
     }
 
     public ModelT1000(String color, int year, boolean soundEnable) {
@@ -42,41 +42,18 @@ public class ModelT1000 implements Robot {
 
     @Override
     public void action() {
-        head.calc();
-        hand.catchSmth();
-        leg.go();
+        getHead().calc();
+        getHand().catchSmth();
+        getLeg().go();
         System.out.println("colot: " + color);
         System.out.println("year: " + year);
         System.out.println("can play sound: " + soundEnable);
+        System.out.println();
     }
 
     @Override
     public void dance() {
         System.out.println("T1000 is dancing!");
-    }
-
-    public Hand getHand() {
-        return hand;
-    }
-
-    public void setHand(Hand hand) {
-        this.hand = hand;
-    }
-
-    public Head getHead() {
-        return head;
-    }
-
-    public void setHead(Head head) {
-        this.head = head;
-    }
-
-    public Leg getLeg() {
-        return leg;
-    }
-
-    public void setLeg(Leg leg) {
-        this.leg = leg;
     }
 
     public String getColor() {
@@ -109,5 +86,20 @@ public class ModelT1000 implements Robot {
 
     public void destroyObject(){
         System.out.println("destroy");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+
+    }
+
+    @Override
+    public Object reimplement(Object o, Method method, Object[] objects) throws Throwable {
+        return this;
     }
 }
