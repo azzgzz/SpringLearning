@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="toshibaHead" class="ru.azz.toshiba.ToshibaHead" scope="prototype"/>
-    <bean id="toshibaHand" class="ru.azz.toshiba.ToshibaHand" scope="prototype"/>
-    <bean id="toshibaLeg" class="ru.azz.toshiba.ToshibaLeg" scope="prototype"/>
+    <bean id="toshibaHead" class="ru.azz.springcore.toshiba.ToshibaHead" scope="prototype"/>
+    <bean id="toshibaHand" class="ru.azz.springcore.toshiba.ToshibaHand" scope="prototype"/>
+    <bean id="toshibaLeg" class="ru.azz.springcore.toshiba.ToshibaLeg" scope="prototype"/>
 </beans>

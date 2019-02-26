@@ -1,6 +1,6 @@
-package ru.azz.sony;
+package ru.azz.springcore.sony;
 
-import ru.azz.robotinterfaces.Leg;
+import ru.azz.springcore.robotinterfaces.Leg;
 
 public class SonyLeg implements Leg {
     @Override

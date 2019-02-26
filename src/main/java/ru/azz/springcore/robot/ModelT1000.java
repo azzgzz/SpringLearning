@@ -1,16 +1,15 @@
-package ru.azz.robot;
+package ru.azz.springcore.robot;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.support.MethodReplacer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.azz.robotinterfaces.Hand;
-import ru.azz.robotinterfaces.Head;
-import ru.azz.robotinterfaces.Leg;
+import ru.azz.springcore.robotinterfaces.Hand;
+import ru.azz.springcore.robotinterfaces.Head;
+import ru.azz.springcore.robotinterfaces.Leg;
 
 import java.lang.reflect.Method;
 

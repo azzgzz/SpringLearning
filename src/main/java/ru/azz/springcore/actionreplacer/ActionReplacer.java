@@ -1,4 +1,4 @@
-package ru.azz.actionreplacer;
+package ru.azz.springcore.actionreplacer;
 
 import org.springframework.beans.factory.support.MethodReplacer;
 

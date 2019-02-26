@@ -1,4 +1,4 @@
-package ru.azz.database;
+package ru.azz.springcore.database;
 
 public class Database {
 

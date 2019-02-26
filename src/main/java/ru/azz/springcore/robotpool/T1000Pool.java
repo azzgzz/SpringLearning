@@ -1,7 +1,7 @@
-package ru.azz.robotpool;
+package ru.azz.springcore.robotpool;
 
-import ru.azz.robotinterfaces.Robot;
-import ru.azz.robotinterfaces.RobotPool;
+import ru.azz.springcore.robotinterfaces.Robot;
+import ru.azz.springcore.robotinterfaces.RobotPool;
 
 import java.util.Map;
 

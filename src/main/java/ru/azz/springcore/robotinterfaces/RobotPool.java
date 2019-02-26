@@ -1,4 +1,4 @@
-package ru.azz.robotinterfaces;
+package ru.azz.springcore.robotinterfaces;
 
 import java.util.Map;
 

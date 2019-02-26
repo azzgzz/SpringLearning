@@ -1,6 +1,6 @@
-package ru.azz.sony;
+package ru.azz.springcore.sony;
 
-import ru.azz.robotinterfaces.Hand;
+import ru.azz.springcore.robotinterfaces.Hand;
 
 public class SonyHand implements Hand {
     @Override

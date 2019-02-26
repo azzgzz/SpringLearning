@@ -6,7 +6,7 @@
 
 
 
-    <bean id="sonyHead" class="ru.azz.sony.SonyHead" scope="prototype"/>
-    <bean id="sonyHand" class="ru.azz.sony.SonyHand" scope="prototype"/>
-    <bean id="sonyLeg" class="ru.azz.sony.SonyLeg" scope="prototype"/>
+    <bean id="sonyHead" class="ru.azz.springcore.sony.SonyHead" scope="prototype"/>
+    <bean id="sonyHand" class="ru.azz.springcore.sony.SonyHand" scope="prototype"/>
+    <bean id="sonyLeg" class="ru.azz.springcore.sony.SonyLeg" scope="prototype"/>
 </beans>

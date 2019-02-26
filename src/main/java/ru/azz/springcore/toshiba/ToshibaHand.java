@@ -1,8 +1,8 @@
-package ru.azz.toshiba;
+package ru.azz.springcore.toshiba;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import ru.azz.robotinterfaces.Hand;
+import ru.azz.springcore.robotinterfaces.Hand;
 
 @Component
 @Lazy

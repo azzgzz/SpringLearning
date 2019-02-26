@@ -1,12 +1,10 @@
-package ru.azz.robot;
+package ru.azz.springcore.robot;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
-import ru.azz.robotinterfaces.Hand;
-import ru.azz.robotinterfaces.Head;
-import ru.azz.robotinterfaces.Leg;
-import ru.azz.robotinterfaces.Robot;
+import ru.azz.springcore.robotinterfaces.Hand;
+import ru.azz.springcore.robotinterfaces.Head;
+import ru.azz.springcore.robotinterfaces.Leg;
+import ru.azz.springcore.robotinterfaces.Robot;
 
 public abstract class BaseModel implements Robot {
     @Autowired
